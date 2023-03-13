@@ -3,7 +3,7 @@ const path = require('path')
 
 const nextConfig = {
   reactStrictMode: true,
-  env: {
+   env: {
     customKey: 'my-value',
     
   },
