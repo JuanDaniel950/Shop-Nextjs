@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Image from 'next/image';
 import AppContext from '@/context/AppContext';
 import style from '@/styles/OrderItem.module.scss';
 import close from '@/assets/icons/icon_close.png';
@@ -13,10 +14,10 @@ const OrderItem = (product: Product) => {
   return (
     <div className={style.OrderItem}>
       <figure>
-        <img src={product.images[0]!} alt={product.title} />
+        <Image src={product?.images[0]} alt={product?.title} />
       </figure>
-      <p>{product.title}</p>
-      <p>{product.price}</p>
+      <p>{product?.title}</p>
+      <p>{product?.price}</p>
       <img src={close.toString()} className="btn-close" alt="close" onClick={() => handleRemove(product)} />
     </div>
   );
